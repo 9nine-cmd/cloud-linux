@@ -1,0 +1,46 @@
+路径和目录文件的创建
+  【Linux学习(2)----路径和目录文件的创建】 https://www.bilibili.com/video/BV1nC4y1P7U8/?share_source=copy_web&vd_source=daa6acab11bda9bb108ac672d6431d20
+  pwd— 显示当前工作目录
+  cd— 切换目录
+    /根目录
+    ~当前用户家目录
+    .当前目录
+    ..上级目录
+    -上一次所在目录
+  ls— 列出目录内容
+    -l详细信息（权限、大小、时间）
+    -a 包含隐藏文件（以 . 开头）
+    -la组合使用
+    /etc指定路径
+  mkdir— 创建目录
+    -p自动创建父目录
+    -m创建时指定权限（如 -m 755）
+  touch— 创建空文件 / 更新时间戳（当文件存在不能覆盖内容）
+    touch file.txt              # 创建空文件（不存在则创建）
+    touch a.txt b.txt           # 创建多个文件
+    touch -t 202501011200 file.txt   # 设置指定时间戳
+  echo "hello" > file.txt     # 创建文件并写入（覆盖原内容）
+  echo "world" >> file.txt    # 追加写入
+  cat > note.txt
+# 输入内容后按 Ctrl+D 保存
+  echo "test" | tee output.txt        # 创建并写入（同时输出到屏幕）
+  echo "test" | tee -a output.txt     # 追加写入
+ 文本编辑器创建文件
+  vim file.txt        # Vim
+  nano file.txt       # Nano
+  cp file.txt copy.txt              # 复制文件
+  cp -r dir1 dir2                   # 递归复制目录
+  cp file.txt /tmp/                 # 复制到指定目录
+    -r递归复制目录
+    -i覆盖前询问
+    -v显示复制过程
+  mv— 移动 / 重命名
+    mv old.txt new.txt                # 重命名
+    mv file.txt /tmp/                 # 移动到其他目录
+    mv dir1 /opt/dir1                 # 移动目录
+  ln— 创建链接
+    ln file.txt hardlink.txt          # 创建硬链接
+    ln -s file.txt softlink.txt      # 创建软链接（符号链接）
+  rm file.txt             # 删除文件
+    rm -r dir/              # 递归删除目录
+    rm -rf dir/             # 强制递归删除（⚠️ 慎用！）
