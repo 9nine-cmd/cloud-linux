@@ -88,3 +88,13 @@ ls -l查看权限用户
 rwx读写执行权限布局示例（ls -l 输出）：
 -rwxr-xr-- -> 所有者 rwx，组 r-x，其他 r--。
 drwxr-xr-x -> d 表示目录，其余同上。
+常见命令示例
+chmod：
+  给脚本加执行权限（所有用户）：
+  chmod +x script.sh
+  仅给文件所有者加执行权限：
+  chmod u+x script.sh
+  给组和其他用户也加执行权限（等同 +x）：
+  chmod g+x,o+x script.sh 或 chmod a+x script.sh
+  递归给目录及其子项加执行位（小心，通常不想对所有普通文件都加）：
+  chmod -R a+x mydir
