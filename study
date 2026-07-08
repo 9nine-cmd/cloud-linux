@@ -83,3 +83,8 @@ EOF
   创建目录并改所有者：sudo mkdir -p /home/yourname/workspace && sudo chown yourname:yourname /home/yourname/workspace
   编辑 /etc/sudoers：sudo visudo
   以用户 alice 执行命令：sudo -u alice command
+whoami查看用户
+ls -l查看权限用户
+rwx读写执行权限布局示例（ls -l 输出）：
+-rwxr-xr-- -> 所有者 rwx，组 r-x，其他 r--。
+drwxr-xr-x -> d 表示目录，其余同上。
